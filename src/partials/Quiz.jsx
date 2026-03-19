@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Quiz() {
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({
     q1: '',
     q2: '',
@@ -10,18 +12,18 @@ export default function Quiz() {
   const questions = [
     {
       id: 'q1',
-      question: 'What is your favorite color?',
-      options: ['Red', 'Blue', 'Green']
+      question: 'Kes neist on Eesti president?',
+      options: ['Kersti Kaljulaid', 'Mart Helme', 'Alar Karis']
     },
     {
       id: 'q2',
-      question: 'What is your favorite season?',
-      options: ['Spring', 'Summer', 'Winter']
+      question: 'Kes neist on Eesti F1 sõitja?',
+      options: ['Franco Colapinto', 'Paul Aaron', 'Nico Hülkenberg']
     },
     {
       id: 'q3',
-      question: 'What is your favorite sport?',
-      options: ['Basketball', 'Soccer', 'Tennis']
+      question: 'Kes neist on Eesti kulturist?',
+      options: ['Ronnie Coleman', 'Chris Bumstead', 'Ott Kiivikas']
     }
   ];
 
@@ -33,7 +35,7 @@ export default function Quiz() {
   };
 
   const handleSubmit = () => {
-    console.log('Answers:', answers);
+    navigate('/results', { state: { answers } });
   };
 
   return (
@@ -65,7 +67,7 @@ export default function Quiz() {
         onClick={handleSubmit}
         className="mt-6 px-6 py-2 bg-stone-900 text-white rounded hover:bg-stone-700"
       >
-        Submit
+        Kinnita
       </button>
     </div>
   );

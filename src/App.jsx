@@ -1,12 +1,17 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quiz from './partials/Quiz';
+import Results from './partials/Results';
 
 function App() {
   return (
-    <div>
-      <Quiz />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Quiz />} />
+        <Route path="/results" element={<Results />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

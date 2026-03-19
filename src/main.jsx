@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import Header from './partials/Header.jsx'
 import Footer from './partials/footer.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className="min-h-screen flex flex-col">
