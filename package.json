@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.2.10",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
